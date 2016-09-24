@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no" />
+<!--        <link rel="stylesheet" type="text/css" href="lib/jqm/jquery.mobile-1.4.5.min.css" /> -->
+        <link rel="stylesheet" href="themes/DiamondsClub.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
+        <script src="js/geo_function.js"><!--mce:0--></script>
+        <script src="http://maps.google.com/maps/api/js"><!--mce:0--></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <title>Diamonds Club</title>
+    </head>
+    <body>
+
+    <div data-role="page" data-theme="b" id="splash" >
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer0" data-theme="b" data-position="fixed" >
+            <p>Powered by <a href="http://www.inyourlife.info">InYourLife</a></p>
+        </div>
+        <!--footer-->
+    </div>
+    <!-- ********************************************************************************* -->
+    <div data-role="page" id="page-index">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <h1>Diamonds Club</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content" >
+
+            <h3 style="text-align: center;">Accesso DiamondsClub</h3>
+            <input type="text" name="txt-email" id="txt-email" value="" placeholder="Email">
+            <input type="password" name="txt-password" id="txt-password" value="" placeholder="Password">
+            <a name="btn-submit-login" id="btn-submit-login" class="ui-btn ui-btn-e ui-corner-all mc-top-margin-1-5">Accedi</a>
+
+            <h3 style="text-align: center;">Oppure</h3>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a" style="width:40%;float:left;"><a href="#page-signup" data-inline="true" ><img class="DCicon" src="appicons/regnuovoincaricato.png"></a></div>
+                <div class="ui-block-b" style="width:40%;float:right;"><a href="#page-signup-ospite" data-inline="true" ><img class="DCicon" src="appicons/regnuovoospite.png"></a></div>
+            </div><!-- /grid-b -->
+
+            <p>Help: <a href="mailto:info@diamondsclub.it">info@diamondsclub.it</a></p>
+
+
+            <!--footer-->
+            <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer0" data-theme="b" data-position="fixed" >
+                <p>Powered by <a href="http://www.inyourlife.info">InYourLife</a></p>
+            </div>
+            <!--footer-->
+
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <!-- ********************************************************************************* -->
+
+    <!-- ********************************************************************************* -->
+    <div data-role="page" id="page-signup">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <a class="btn-header-custom" href="#page-index" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Diamonds Club</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Registrazione Incaricato</h3>
+            <div id="ctn-err" class="bi-invisible"></div>
+            <label for="txt-nome-inc">Nome</label>
+            <input type="text" name="txt-nome-inc" id="txt-nome-inc" value="">
+            <label for="txt-cognome-inc">Cognome</label>
+            <input type="text" name="txt-cognome-inc" id="txt-cognome-inc" value="">
+            <label for="txt-email-inc">Email</label>
+            <input type="text" name="txt-email-inc" id="txt-email-inc" value="">
+            <label for="txt-email2-inc">Ripeti email</label>
+            <input type="text" name="txt-email2-inc" id="txt-email2-inc" value="">
+            <label for="txt-cellulare-inc">Cellulare</label>
+            <input type="text" name="txt-cellulare-inc" id="txt-cellulare-inc" value="">
+            <label for="txt-password-inc">Password</label>
+            <input type="password" name="txt-password-inc" id="txt-password-inc" value="">
+            <label for="txt-password2-inc">Ripeti Password</label>
+            <input type="password" name="txt-password2-inc" id="txt-password2-inc" value="">
+            <label for="txt-codice-inc">Codice Incaricato</label>
+            <input type="text" name="txt-codice-inc" id="txt-codice-inc" value="">
+            <label for="txt-platino-inc">Platino Upline</label>
+            <input type="text" name="txt-platino-inc" id="txt-platino-inc" value="">
+            <!--<a href="#dlg-sign-up-sent" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</a>-->
+            <button id="btn-submit-inc" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Registra</button>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <!-- ********************************************************************************* -->
+
+    <!-- ********************************************************************************* -->
+    <div data-role="page" id="page-signup-ospite">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <a class="btn-header-custom" href="#page-index" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Diamonds Club</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Registrazione Ospite</h3>
+            <div id="ctn-err-ospite" class="bi-invisible"></div>
+            <label for="txt-first-name-ospite">First Name</label>
+            <input type="text" name="txt-first-name-ospite" id="txt-first-name-ospite" value="">
+            <label for="txt-last-name-ospite">Last Name</label>
+            <input type="text" name="txt-last-name-ospite" id="txt-last-name-ospite" value="">
+            <label for="txt-email-address-ospite">Email Address</label>
+            <input type="text" name="txt-email-address-ospite" id="txt-email-address-ospite" value="">
+            <label for="txt-password-ospite">Password</label>
+            <input type="password" name="txt-password-ospite" id="txt-password-ospite" value="">
+            <label for="txt-password-confirm-ospite">Confirm Password</label>
+            <input type="password" name="txt-password-confirm-ospite" id="txt-password-confirm-ospite" value="">
+            <!--<a href="#dlg-sign-up-sent" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</a>-->
+            <button id="btn-submit-ospite" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</button>
+            <div data-role="popup" id="dlg-sign-up-sent-ospite" data-dismissible="false" style="max-width:400px;">
+                <div data-role="header">
+                    <h1>Quasi fatto...</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3>Conferma il tuo indirizzo email</h3>
+                    <p>Ti abbiamo spedito un messaggio con le istruzioni per confermare il tuo indirizzo email!</p>
+                    <div class="mc-text-center"><a href="sign-in.html" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+
+                </div>
+            </div>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <!-- ********************************************************************************* -->
+
+    <!-- ********************************************************************************* -->
+    <div data-role="page" id="page-signup-succeeded">
+        <div data-role="header" data-theme="c">
+            <h1>Diamonds Club</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 class="mc-text-center">Registrazione avvenuta con successo</h2>
+            <p class="mc-top-margin-1-5">Congratulazioni!  Ora sei registrato con Diamonds Club.</p>
+            <a href="#page-signin" class="ui-btn ui-btn-b ui-corner-all">Accedi</a>
+            <p></p>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <!-- ********************************************************************************* -->
+
+    <!-- ********************************************************************************* -->
+    <div data-role="page" id="page-index-logged">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <h1><span class="iduserval"></span></h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content" id="page-index-logged-wrapper">
+            <div id="registrationIDDiv"></div>
+            <div class="ui-grid-b">
+                <div class="ui-block-a"><a id="btn-leader" data-inline="true" ><img class="DCicon" src="appicons/leader_b.png"></a></div>
+                <div class="ui-block-b"><a id="btn-viaggi" data-inline="true" ><img class="DCicon" src="appicons/viaggi_b.png"></a></div>
+                <div class="ui-block-c"><a href="#n21" data-inline="true"  ><img class="DCicon" src="appicons/n21_b.png"></a></div>
+            </div><!-- /grid-b -->
+            <div class="ui-grid-b">
+                <!--<div class="ui-block-a"><a href="#live" data-inline="true" class="ui-btn ui-btn-e" ><i class="fa fa-calendar fa-3x"></i><br /><span class="fontsize12">Live</span></a></div>-->
+                <div class="ui-block-a"><a data-inline="true" class="btn-calendario" ><img class="DCicon" src="appicons/eventi_b.png"</a></div>
+                <div class="ui-block-b"><a id="btn-materiali" data-inline="true" ><img class="DCicon" src="appicons/materiali_b.png"</a></div>
+                <div class="ui-block-c"><a id="btn-page-live" href="#page-live" data-inline="true"  ><img class="DCicon" src="appicons/live_b.png"></a></div>
+            </div><!-- /grid-b -->
+            <div class="ui-grid-b">
+                <div class="ui-block-a"><a id="btn-nuovo-prospect" data-inline="true"  ><img class="DCicon" src="appicons/prospect_b.png"></a></div>
+                <div class="ui-block-b"><a id="btn-ospiti-idbutton" data-inline="true" ><img class="btn-ospiti DCicon" src="appicons/ospitipersonali_b.png"></a></div>
+                <div class="ui-block-c"><a id="btn-incaricati" data-inline="true" ><img class="DCicon" src="appicons/incaricati_b.png"></a></div>
+            </div><!-- /grid-b -->
+            <div class="ui-grid-b">
+                <div class="ui-block-a"><a id="btn-statistiche-ospiti" href="#page-statistiche-ospiti" data-inline="true" ><img class="DCicon" src="appicons/statistiche_b.png"></a></div>
+            </div><!-- /grid-b -->
+            <!--<div class="ui-grid-b">
+                <div class="ui-block-a"><a href="#contatti" data-inline="true" class="ui-btn ui-btn-e" ><i class="fa fa-envelope fa-3x"></i><br /><span class="fontsize12">Contatti</span></a></div>
+            </div>-->
+        </div><!-- /content -->
+
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_dark.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+    <!-- ********************************************************************************* -->
+
+    <!-- ********************************************************************************* -->
+    <!-- (i) pagine del menu page-index-logged -->
+    <!-- ********************************************************************************* -->
+    <div data-role="page" id="page-leader">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Leader</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                        <ul class="ui-alt-icon" data-role="listview" data-theme="a" data-divider-theme="a" id="leader_listview">
+                        </ul>
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-leader-dettaglio">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <a class="btn-header-custom" href="#page-leader" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Dettaglio Leader</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="dettaglio-leader-content">
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+
+    <div data-role="page" id="page-viaggi">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <h1>Viaggi</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                <div class="content-primary">
+                    <div>
+                        <ul data-role="listview" data-theme="b" data-divider-theme="b" id="viaggi_listview">
+                        </ul>
+                    </div>
+                    <div id="viaggi_popups"></div>
+                </div><!--/content-primary -->
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-materiali">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <a href="#nav-panel" class="btn-header-custom"><i class="fa fa-bars"></i></a>
+            <h1>Materiali</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                <div id="materiali_content">
+                </div><!--/content-primary -->
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+            <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
+                <div id="pannello-materiali-impostazioni">
+                    <form>
+                        <fieldset>
+                            <ul data-role="listview" data-inset="true" id="listview-pannello-materiali-impostazioni">
+                            </ul>
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div><!-- /panel -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="n21">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>N21</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <p>Dati di accesso</p>
+            <p>Nome Utente: Italia Password: 9876</p>
+                <iframe src="http://www.e-networking.it" width="100%" height="100%"  seamless></iframe>
+        </div><!-- /content -->
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-calendario">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Eventi</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                <div class="content-primary">
+                    <div>
+                        <ul data-role="listview" data-theme="b" data-divider-theme="b" id="eventi_listview">
+                        </ul>
+                    </div>
+                </div><!--/content-primary -->
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="live">
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-index-logged" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Live</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            Pagina Live
+        </div><!-- /content -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="contatti">
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-index-logged" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Contatti</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            Pagina Contatti
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <!-- ********************************************************************************* -->
+    <!-- (f) pagine del menu page-index-logged -->
+    <!-- ********************************************************************************* -->
+
+    <!-- ********************************************************************************* -->
+    <!-- (i) pagine del menu area riservata -->
+    <!-- ********************************************************************************* -->
+    <div data-role="page" id="page-profilo-personale">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Settings</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="false"><li><a href="#">Profilo Personale</a></li><li><a href="#">Profilo Collaboratore</a></li><li><a href="#">Chat</a></li><li><a href="#">Notifiche</a></li><li><a class="logout-button" href="#page-index">Logout</a></li></ul>
+        </div><!-- /content -->
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_dark.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+
+    <div data-role="page" id="page-incaricati">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Incaricati</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                        <form class="ui-filterable">
+                            <input id="incaricati-filterable-input" data-type="search" placeholder="Cerca nome incaricato...">
+                        </form>
+                        <ul data-autodividers="true" data-theme="b" data-divider-theme="b" data-role="listview" data-filter="true" data-input="#incaricati-filterable-input" id="incaricati_listview">
+                        </ul>
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div>
+                <div class="ui-block-d btn-page-chat"><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-incaricati-dettaglio">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <a class="btn-header-custom" href="#page-incaricati" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Dettaglio Incaricato</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="dettaglio-incaricato-content">
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-ospiti">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <h1>Ospiti</h1>
+            <a href="#nav-panel-ospiti" class="btn-header-custom"><i class="fa fa-bars"></i></a>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                        <form class="ui-filterable">
+                            <input id="ospiti-filterable-input" data-type="search" placeholder="Cerca nome ospite...">
+                        </form>
+                        <ul data-autodividers="true" data-split-icon="phone" data-theme="b" data-divider-theme="b" data-role="listview" data-filter="true" data-input="#ospiti-filterable-input" id="ospiti_listview">
+                        </ul>
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_dark.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+            <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel-ospiti">
+        <div id="pannello-ospiti-impostazioni">
+            <form>
+                <fieldset>
+                    <ul data-role="listview" data-inset="true" id="listview-pannello-ospiti-impostazioni">
+                    </ul>
+                </fieldset>
+            </form>
+
+        </div>
+            </div><!-- /panel -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-ospiti-dettaglio">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <a class="btn-header-custom" href="#page-ospiti" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Dettaglio Ospite</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="dettaglio-ospite-content">
+
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-statistiche-ospiti">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Statistiche</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <form class="ui-filterable">
+                <input id="ospiti-statistiche-filterable-input" data-type="search" placeholder="Cerca nome ospite...">
+            </form>
+            <ul data-split-icon="phone" data-theme="b" data-divider-theme="b" data-role="listview" data-filter="true" data-input="#ospiti-statistiche-filterable-input" id="ospiti_statistiche_listview">
+            </ul>
+        </div><!-- /content -->
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-notifiche">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <h1>Notifiche</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                <ul data-theme="b" data-role="listview" id="notifiche_listview">
+                </ul>
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-notifiche-dettaglio">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <a class="btn-page-notifiche-back btn-header-custom" href="#" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>Messaggio</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="dettaglio-notifica-content">
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-chat">
+        <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false" >
+            <h1>CHAT <span id="nomechat">15 planner</span></h1>
+            <div style="margin-left:20px;text-align:center;">
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a" style="width:75%;">
+                        <textarea name="messageText" id="messageText" style="height:35px !important;"></textarea>
+                    </div>
+                    <div class="ui-block-b" style="width:25%;">
+                        <button data-theme="a" id="chatSendButton" name="chatSendButton">invia</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="incomingMessages" name="incomingMessages" class="msgContainerDiv" ></div>
+            <div id="segnapostoincomingMessages"></div><br/><br/><br/><br/><br/>
+        </div>
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_dark.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+    </div><!-- /page -->
+
+    <div data-role="page" id="page-nuovo-prospect">
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <h1><span id="nuovo-prospect-title">Prospect/Ospite</span></h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div data-role="content">
+                <div class="mexsistema">
+                </div>
+                <form id="nuovoprospect">
+                    <input type="hidden" name="chiamante" id="chiamante" value="APP-nuovo-prospect"/>
+                    <input type="hidden" name="nomeForm" id="nomeForm" value=""/>
+                    <input type="hidden" name="emailForm" id="emailForm" value=""/>
+                    <input type="hidden" name="passwordForm" id="passwordForm" value=""/>
+                    <input type="hidden" name="cellulareForm" id="cellulareForm" value=""/>
+                    <input type="hidden" name="noteForm" id="noteForm" value=""/>
+                    <input type="hidden" name="nuovoprospect_id_utente" id="nuovoprospect_id_utente" value=""/>
+                    <input type="hidden" name="invitanteForm" id="invitanteForm" value=""/>
+                    <input type="hidden" name="countryForm" id="countryForm" value=""/>
+                    <input type="hidden" name="cityForm" id="cityForm" value=""/>
+                    <input type="hidden" name="secret" id="secret" value=""/>
+                    <input type="hidden" name="codice_ospite" id="codice_ospite" value=""/>
+                    <input type="hidden" name="idospitedamodificare" id="idospitedamodificare" value=""/>
+                    <input type="hidden" name="sponsorizzato" id="sponsorizzato" value=""/>
+
+
+                    <div>
+                        <label for="nome">Nome (*)</label>
+                        <input type="text" name="nome" id="nome" value="">
+                        <label for="cognome">Cognome (*)</label>
+                        <input type="text" name="cognome" id="cognome" value="">
+                        <label for="prefisso_internazionale" class="select">Prefisso internazionale (*)</label>
+                        <select class="select" name="prefisso_internazionale" id="prefisso_internazionale" >
+                                <option value="+39">Italia +39</option>
+                                <option value="+43">Austria +43</option>
+                                <option value="+33">Francia +33</option>
+                                <option value="+49">Germania +49</option>
+                                <option value="+44">Regno Unito +44</option>
+                                <option value="+34">Spagna +34</option>
+                        </select>
+                        <label for="cellulare">Cellulare (*)</label>
+                        <input type="number" name="cellulare" pattern="[0-9]*" id="cellulare" value="">
+                        <label for="indirizzo">Indirizzo (*)</label>
+                        <input type="text" name="indirizzo" id="indirizzo" value="" placeholder="Inserisci il tuo indirizzo!">
+                        <label for="cittacerca">Città (*)</label>
+                        <input type="text" name="cittacerca" id="cittacerca" value="" placeholder="Inserisci Città!">
+                    </div>
+
+                    <div style="display:none;margin-top:0px; padding:0; font-size:15px; width:250px;background:none; font-weight:100; position:absolute; z-index:25000;" id="resultscitta"  name="citta"></div>
+                    <input type="hidden" name="lat" id="lat">
+                    <input value="" type="hidden" name="lon" id="lon">
+                    <input value="" type="hidden" name="citta_google" id="citta_google">
+
+                    <div id="messcercaind" style="display:none;"></div>
+                    <div id="controllaind" class="ui-btn ui-btn-d">Cerca Indirizzo</div>
+
+                    <div>
+                        <label for="stato" class="select">Stato (*)</label>
+                        <select class="select" name="stato" id="stato" >
+                                <option>Italy</option>
+                                <option>Austria</option>
+                                <option>Francia</option>
+                                <option>Germania</option>
+                                <option>Regno Unito</option>
+                                <option>Spagna</option>
+                                <option>Altro...</option>
+                        </select>
+
+                        <label for="professione">Professione </label>
+                        <input type="text" name="professione" id="professione" value="" >
+
+                        <label for="data_nascita">Nato/a il </label>
+                        <input type="date" name="data_nascita" id="data_nascita">
+
+                        <label for="data_contatto">Data contatto </label>
+                        <input type="date" name="data_contatto" id="data_contatto">
+
+
+                            <label for="note">Note:</label>
+                            <textarea name="note" id="note"></textarea>
+
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Vuoi che il Prospect diventi Ospite per vedere Il Sito?</legend>
+                                <input type="radio" name="diventaospite" id="diventaospitesi" value="on">
+                                <label for="diventaospitesi">Sì</label>
+                                <input type="radio" name="diventaospite" id="diventaospiteno" value="off" checked="checked">
+                                <label for="diventaospiteno">No</label>
+                            </fieldset>
+
+                        <div id="nuovo_prospect_submit" class="nuovo_prospect_submit ui-icon-check ui-btn-icon-left ui-btn ui-btn-d">Salva</div>
+
+                    </div>
+
+                    <div class="diventaospiteriq">
+                        <label for="emailnuovo">Email (*) </label>
+                        <input type="text" name="emailnuovo" id="emailnuovo" value="" >
+                    </div>
+
+                    <div class="diventaospiteriq">
+                        <label for="password">Password (*) </label>
+                        <input type="password" name="password" id="password" value="" >
+                        <i class="showpasswordcheckbox" class="fa fa-eye fa-2x"></i>
+                    </div>
+
+                    <div class="diventaospiteriq">
+                        <label for="password2">Ripeti Password (*) </label>
+                        <input type="password" name="password2" id="password2" value="" >
+                        <i class="showpasswordcheckbox" class="fa fa-eye fa-2x"></i>
+                    </div>
+
+                    <div class="diventaospiteriq">
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>L'ospite ha visto il piano Marketing?</legend>
+                                <input class="check_data" type="radio" name="primoinvito" id="primoinvitosi" value="si">
+                                <label for="primoinvitosi">Sì</label>
+                                <input class="check_data" type="radio" name="primoinvito" id="primoinvitono" value="no" checked="checked">
+                                <label for="primoinvitono">No</label>
+                            </fieldset>
+
+                    <div class="diventaospiteriq">
+                        <label for="data_pm">Data PM </label>
+                        <input type="date" name="data_pm" id="data_pm">
+                    </div>
+
+                        <div class="diventaospiteriq">
+                        <label for="esito" class="select">Esito </label>
+                        <select class="select" name="esito" id="esito" >
+                                <option value="">---Scegli Esito----</option>
+                                <option value="Incaricato">Incaricato</option>
+                                <option value="Da Richiamare">Da Richiamare</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Non Interessato">Non Interessato</option>
+                        </select>
+                        </div>
+
+                        <div class="diventaospiteriq data_spons" >
+                            <label for="data_spons">Data Sponsorizzazione </label>
+                            <input type="date" name="data_spons" id="data_spons">
+                        </div>
+
+
+                        <div class="diventaospiteriq invio_email_ospite">
+                                <div class="mexsistema2"></div>
+                            <div id="invio_mail" class="ui-btn ui-btn-d">Invia Mail</div>
+                        </div>
+                        <div id="compila_testo_mail" class="invio_email_ospite" >
+                                <h4>Personalizza il testo della mail</h4>
+                                <p>Sei appena stato iscritto da <span id="nomeutenteinvitante"></span> per accedere al sito www.diamondsclub.it</p>
+                            <p>Le credenziali di accesso sono: </p>
+                            <p>Nome utente: <span id="emailospite"></span></p>
+                            <p>Passowrd: *****</p>
+                                <textarea name="editor1" id="editor1" rows="10">
+														Stasera potrai vedere nella pagina Live una presentazione della nostra attività.<br>
+														Come anticipato telefonicamente collegati alle 21:00 e vai su Live, ci sentiamo dopo la presentazione.
+														<br><br>
+														Ciao a dopo.
+													</textarea>
+                                <div class="mexsistema2"></div>
+                                <div class="messaggioerr2"></div>
+                            <div id="invio_mail_submit" class="ui-btn ui-btn-d">Invia</div>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                        </div>
+
+                        <div>
+                            <div id="nuovo_ospite_submit" class="nuovo_prospect_submit ui-icon-check ui-btn-icon-left ui-btn ui-btn-d">Salva</div>
+                        </div>
+
+
+                </form>
+
+                <div id="controlloindirizzo">
+                    <div id="map">
+                        <!--<img id="mapAjaxLoader" src="img/ajax-loader.gif" alt="loader" width="32" height="32" />-->
+                    </div>
+                </div>
+
+            </div><!-- /content -->
+        </div>
+        <!--footer-->
+        <div data-role="footer" class="ui-bar dcfooter" data-id="DC-footer" data-theme="b" data-position="fixed" >
+            <div class="dcfootergrid ui-grid-d">
+                <div  class="ui-block-a"><a href="#page-index-logged"><img class="DCiconfooter" src="appicons/home_bottone_b.png"></a></div>
+                <div class="ui-block-b btn-ospiti"><a href="#" ><img class="DCiconfooter" src="appicons/ospiti_bottone_b.png"></a></div>
+                <div class="ui-block-c btn-page-notifiche"><div class="ui-badge-container"><span class="badge notifiche-badge"></span><a href="#" ><img class="DCiconfooter" src="appicons/notifiche_bottone_b.png"></a></div></div>
+                <div class="ui-block-d btn-page-chat"><div class="ui-badge-container"><span class="badge chat-badge"></span><a href="#"  ><img class="DCiconfooter" src="appicons/chat_bottone_b.png"></a></div></div>
+                <div class="ui-block-e"><a href="#page-profilo-personale" ><img class="DCiconfooter" src="appicons/profilo_bottone_b.png"></a></div>
+            </div><!-- /grid-b -->
+        </div>
+        <!--footer-->
+    </div><!-- /page -->
+
+
+
+    <!-- ********************************************************************************* -->
+    <!-- (f) pagine del menu area riservata -->
+    <!-- ********************************************************************************* -->
+
+
+    </body>
+</html>

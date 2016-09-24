@@ -1,0 +1,226 @@
+﻿body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+h1,h2,h3,h4,h5 {
+    color:#0071bc;
+}
+
+.ui-btn-icon-notext.ui-corner-all {
+    -webkit-border-radius: .3125em;
+    border-radius: .3125em;
+}
+.mc-text-center {
+    text-align:center;
+}
+.mc-top-margin-1-5 {
+    margin-top:1.5em;
+}
+h2.mc-text-danger,
+h3.mc-text-danger  {
+    color:red;
+}
+
+.bi-invalid-input {
+    background-color:#fffacd!important;
+}
+
+.bi-invisible {
+    display:none;
+}
+
+.bi-ctn-err {
+    background-color:#ffe1cd;
+    padding:0 .5em;
+    margin-bottom:.5em;
+    border: 1px solid #e9cfbd;
+    border-radius:3px 3px;
+}
+
+.bi-header {
+    border: 0px; position: fixed; width: 100%; top: 0px; left: 0px; z-index: 21; background:#cccccc; padding-top:20px;
+}
+
+.fontsize12 {
+    font-size:12px;
+}
+
+.wrap {
+    white-space: normal !important;
+}
+
+/* Declare fonts to use and their server location */
+@font-face{
+    font-family:'Whitney';
+    src:url(http://[path-to-font-on-a-publicly-accessible-server]/whitney-semibold.eot);
+    src:url(http://[path-to-font-on-a-publicly-accessible-server]/whitney-semibold.eot?#iefix) format("embedded-    opentype"),url(http://[path-to-font-on-a-publicly-accessible-server]/whitney-semibold.woff) format("woff"),url(http://[path-to-font-on-a-publicly-accessible-server]/whitney-semibold.ttf) format("truetype"),url(http://[path-to-font-on-a-publicly-accessible-server]/whitney-semibold.svg#WhitneySemiboldRegular) format("svg");
+    font-weight:normal;
+    font-style:normal
+}
+
+/* Override any existing styles with your own fonts - may need to use !important for some properties to work */
+* {
+    font-family: 'Whitney', sans-serif;
+}
+
+
+.custom {
+    padding: 0;
+}
+
+.custom > div {
+    margin: 0;
+}
+
+.custom > div > label {
+    border-radius: 0;
+    border: 0;
+}
+
+.nascosto {
+    display:none;
+}
+
+.ios7
+{
+    padding-top: 20px !important;
+}
+
+.ios7-header-button
+{
+    margin-top: 20px !important;
+}
+
+.dcfooter { background: #ffffff !important; }
+
+.dcfootergrid {width:90%;text-align:center;}
+
+.DCiconfooter {
+    width:40px;
+}
+
+.DCicon {
+    width:95%;
+}
+
+
+.split-custom-wrapper {
+    /* position wrapper on the right of the listitem */
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.split-custom-button {
+    position: relative;
+    float: right;   /* allow multiple links stacked on the right */
+    height: 100%;
+    margin:0;
+    min-width:3em;
+    /* remove boxshadow and border */
+    border:none;
+    moz-border-radius: 0;
+    webkit-border-radius: 0;
+    border-radius: 0;
+    moz-box-shadow: none;
+    webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.split-custom-button span.ui-btn-inner {
+    /* position icons in center of listitem*/
+    position: relative;
+    margin-top:50%;
+    margin-left:50%;
+    /* compensation for icon dimensions */
+    top:11px;
+    left:-12px;
+    height:40%; /* stay within boundaries of list item */
+}
+
+.invio_email_ospite {
+    border:1px solid #0071bc;
+    padding:5px;
+}
+
+.ui-badge-container {
+    position: relative;
+}
+.badge {
+    background: #BA070F;
+    color: #fff;
+    padding: 1px 7px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 999;
+    border-radius: .8em;
+    border: 2px solid #fff;
+    size:10px;
+}
+
+#background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    background: url(../appicons/sfondonero.png) no-repeat center center fixed !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+}
+.ui-page{
+    background:none;
+}
+
+.leftmessage {
+    margin-right:50px;
+    text-align:left;
+    float:left;
+    background-color:#efefef;
+    border-radius: .8em;
+    border: 2px solid #efefef;
+    padding:10px;
+}
+
+.rightmessage {
+    margin-left:50px;
+    text-align:right;
+    float:right;
+    background-color:#3399cc;
+    border-radius: .8em;
+    border: 2px solid #3399cc;
+    padding:10px;
+    color:white;
+}
+.clearboth {
+    clear:both;
+    margin-bottom:10px;
+}
+.message-bubble {
+    margin-bottom:15px;
+    font-size:14px;
+    width:100%;
+    min-width:100px;
+}
+.message-sender {
+    font-weight: bold;
+}
+.message-text {
+    position:relative;
+}
+.message-meta {
+    font-size:10px;
+    position:absolute;
+    right:0px;
+    bottom:-14px;
+    text-align:right;
+}
+
+[data-role=page]{display:none;}
+#splash { display:block;}
