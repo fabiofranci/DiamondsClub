@@ -28,7 +28,7 @@
   <plugin name="cordova-plugin-badge" source="npm" />
 
 
-  <plugin name="phonegap-plugin-push" source="npm">
+  <plugin name="phonegap-plugin-push" source="npm" >
     <param name="SENDER_ID" value="851212453749" />
   </plugin>
 
